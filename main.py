@@ -106,7 +106,7 @@ class Individuo:
         hijo.y = self.y
         hijo.velocidad = self.velocidad * random.uniform(0.09, 1.01)
         hijo.tamano = self.tamano * random.uniform(0.09, 1.01)
-        self.color = (255,0,0)
+        (int(self.tamano * 2.55), random.randint(0, 255), random.randint(0, 255))
         hijo.energia_gasto = self.energia_gasto * random.uniform(0.09, 1.01)
         hijo.energia = ENERGIA_INICIAL
         hijo.rango_vision = self.rango_vision * random.uniform(0.09, 1.01)
