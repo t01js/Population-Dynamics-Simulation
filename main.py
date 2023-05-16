@@ -7,8 +7,8 @@ import numpy as np
 WIDTH, HEIGHT = 1200, 800
 NUM_FLECHAS = 1500
 NUM_COMIDA = 50
-COMIDA_REGEN = 0
-COMIDA_REGEN_INTERVALO = 10000  # Intervalo de tiempo en milisegundos (5 segundos)
+COMIDA_REGEN = 20
+COMIDA_REGEN_INTERVALO = 5000  # Intervalo de tiempo en milisegundos (5 segundos)
 
 #GENES
 ENERGIA_INICIAL = 100
@@ -224,7 +224,7 @@ def generar_comida(comida):
     tiempo_actual = pygame.time.get_ticks()
     if tiempo_actual - generar_comida.ultima_generacion >= COMIDA_REGEN_INTERVALO:
         generar_comida.ultima_generacion = tiempo_actual
-        for _ in range(NUM_COMIDA):
+        for _ in range(COMIDA_REGEN):
             comida.append(Comida())
 
 generar_comida.ultima_generacion = 0
